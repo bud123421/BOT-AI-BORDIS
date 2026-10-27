@@ -1,36 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORDIS - The Ultimate Roleplay Bot</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
-</head>
-<body>
-    <h1>Welcome to <strong>BORDIS</strong></h1>
-    <h1>The best <strong>Discord </strong>Bot</h1>
-    <p>
-        Bot andalan untuk manajemen komunitas Roleplay Anda.<br>
-        <strong>BORDIS</strong> dilengkapi sistem <strong>SSRP Studio</strong> otomatis,<br>
-        Pembersih Chatlogs, fitur AI Chatbot pintar,<br>
-        dan sistem Auto-Accept formulir yang dinamis!
-    </p>
+    <title>BORDIS - Ultimate Roleplay Bot</title>
+    <!-- Tailwind CSS untuk Styling Cepat & Modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Kustom -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tombol Invite Bot dengan Link OAuth2 Anda -->
-    <a href="https://discord.com/oauth2/authorize?client_id=1553655967051419730&permissions=8&integration_type=0&scope=bot+applications.commands" class="button2" style="display: inline-block;" target="_blank">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        INVITE ME
-    </a>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b',
+                        neonBlue: '#38bdf8',
+                        neonPurple: '#c084fc',
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '.5', filter: 'drop-shadow(0 0 10px rgba(56, 189, 248, 0.8))' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c084fc; }
+        
+        /* Glassmorphism Effect for Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-neonPurple selection:text-white">
 
-    <!-- Tautan Dokumen Hukum untuk Syarat Verifikasi Discord -->
-    <div style="text-align: center; margin-top: 10%;">
-        <a href="tos.html" style="color: #03e9f4; text-decoration: none; margin-right: 20px; font-family: 'Open Sans', sans-serif;">Terms of Service</a>
-        <a href="privacy.html" style="color: #03e9f4; text-decoration: none; font-family: 'Open Sans', sans-serif;">Privacy Policy</a>
-    </div>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-robot text-3xl text-neonBlue animate-pulse-glow"></i>
+            <span class="text-2xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-neonPurple">BORDIS</span>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-semibold text-gray-300">
+            <a href="#features" class="hover:text-neonBlue transition-colors">Fitur</a>
+            <a href="#commands" class="hover:text-neonBlue transition-colors">Commands</a>
+            <a href="tos.html" class="hover:text-neonBlue transition-colors">ToS</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 flex flex-col items-center text-center overflow-hidden">
+        <!-- Background Glow Elements -->
+        <div class="absolute top-20 left-10 w-64 h-64 bg-neonBlue rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-neonPurple rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 z-10 leading-tight">
+            Tingkatkan Kualitas <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonBlue via-purple-400 to-neonPurple">Roleplay Server Anda</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl z-10">
+            BORDIS adalah bot multifungsi dengan sistem <strong>SSRP Studio Otomatis</strong>, AI Chatbot, dan manajemen server dinamis. Dibuat khusus untuk komunitas yang serius.
+        </p>
+        
+        <!-- Invite Button with Glow -->
+        <a href="https://discord.com/oauth2/authorize?client_id=1553655967051419730&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" 
+           class="relative inline-flex group z-10">
+            <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+            <button class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+                <i class="fa-brands fa-discord mr-3 text-2xl"></i> Invite BORDIS
+            </button>
+        </a>
+    </header>
+
+    <!-- Fitur Utama (Dashboard Style Cards) -->
+    <section id="features" class="py-16 px-6 md:px-12 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Fitur Unggulan</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full bg-blue-900/50 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-camera-retro text-3xl text-neonBlue"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">SSRP Studio Dinamis</h3>
+                <p class="text-gray-400 text-sm">Buat SSRP secara manual atau otomatis dari file chatlog. Dilengkapi fitur zoom, pan kamera, dan render Ultra HD langsung di Discord.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full bg-purple-900/50 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-brain text-3xl text-neonPurple"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">AI Chatbot Pintar</h3>
+                <p class="text-gray-400 text-sm">Bot bisa diajak ngobrol santai ala anak tongkrongan dengan memori pintar. Terintegrasi API AI canggih untuk interaksi natural.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-full bg-green-900/50 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-check-double text-3xl text-green-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Sistem Auto-Accept</h3>
+                <p class="text-gray-400 text-sm">Deteksi form pendaftaran otomatis. Sekali klik 'Accept', bot akan mengubah nickname, memberi role, dan mencatat ke log server.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabel Commands (Terminal Style) -->
+    <section id="commands" class="py-16 px-6 md:px-12 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center"><i class="fa-solid fa-terminal mr-3"></i>Daftar Perintah (Commands)</h2>
+        
+        <div class="bg-[#0d1117] rounded-xl border border-gray-800 overflow-hidden shadow-2xl">
+            <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="text-xs text-gray-400 ml-4 font-mono">bordis-terminal ~ bash</span>
+            </div>
+            <div class="p-6 overflow-x-auto">
+                <table class="w-full text-left font-mono text-sm">
+                    <thead>
+                        <tr class="text-gray-400 border-b border-gray-700">
+                            <th class="pb-3 px-4 w-1/4">Command</th>
+                            <th class="pb-3 px-4 w-1/2">Deskripsi</th>
+                            <th class="pb-3 px-4 w-1/4">Akses</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors">
+                            <td class="py-4 px-4 text-neonBlue">/ssrp</td>
+                            <td class="py-4 px-4">Buka panel SSRP Studio interaktif (Thread)</td>
+                            <td class="py-4 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors">
+                            <td class="py-4 px-4 text-neonBlue">/chatlogs</td>
+                            <td class="py-4 px-4">Pembersih otomatis file chatlog .txt dari game</td>
+                            <td class="py-4 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30 transition-colors">
+                            <td class="py-4 px-4 text-neonBlue">/panel</td>
+                            <td class="py-4 px-4">Dashboard manajemen Auto-Accept, Role, & List</td>
+                            <td class="py-4 px-4"><span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">Admin Only</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/30 transition-colors">
+                            <td class="py-4 px-4 text-neonBlue">/setupai</td>
+                            <td class="py-4 px-4">Atur channel khusus untuk interaksi AI BORDIS</td>
+                            <td class="py-4 px-4"><span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">Admin Only</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Legal Links -->
+    <footer class="border-t border-gray-800 py-8 mt-12 text-center">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="tos.html" class="text-sm text-gray-400 hover:text-neonBlue transition-colors font-semibold">Terms of Service</a>
+            <span class="text-gray-600">|</span>
+            <a href="privacy.html" class="text-sm text-gray-400 hover:text-neonBlue transition-colors font-semibold">Privacy Policy</a>
+        </div>
+        <p class="text-xs text-gray-600">© 2026 BORDIS Bot. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
