@@ -2,24 +2,36 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support BORDIS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>body { background-color: #0f172a; color: #f8fafc; font-family: sans-serif; }</style>
 </head>
-<body class="p-8 max-w-2xl mx-auto text-center flex flex-col items-center justify-center min-h-screen">
+<body class="p-6 md:p-12 max-w-2xl mx-auto text-center flex flex-col items-center justify-center min-h-screen">
     <a href="index.html" class="text-gray-400 hover:text-white mb-8 absolute top-8 left-8"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
     
     <i class="fa-solid fa-heart text-6xl text-pink-500 mb-4 animate-bounce"></i>
     <h1 class="text-3xl font-bold mb-4">Dukung Pengembangan BORDIS</h1>
-    <p class="text-gray-400 mb-8">Server bot butuh kopi dan biaya hosting. Dukungan sekecil apa pun sangat berarti buat pengembangan fitur selanjutnya!</p>
+    <p class="text-gray-400 mb-6">Server bot butuh kopi dan biaya hosting. Dukungan sekecil apa pun sangat berarti buat pengembangan fitur selanjutnya!</p>
     
-    <!-- Bagian QRIS -->
-    <div class="bg-white p-4 rounded-xl shadow-2xl inline-block">
-        <!-- Pastikan file gambar 1002323133.jpg ini Anda unggah ke folder GitHub yang sama, ATAU ganti link src di bawah ini dengan URL langsung ke gambarnya -->
-        <img src="1002323133.jpg" alt="QRIS Donasi" class="max-w-xs md:max-w-sm rounded-lg border border-gray-200">
+    <!-- Gambar QRIS disesuaikan dengan nama file di GitHub Anda -->
+    <div class="bg-white p-4 rounded-xl shadow-2xl inline-block mb-4">
+        <img src="IMG_20261028_224849_520.jpeg" alt="QRIS Donasi BORDIS" class="max-w-xs md:max-w-sm rounded-lg border border-gray-200">
     </div>
-    
-    <p class="mt-6 text-sm text-gray-500">Scan menggunakan M-Banking atau E-Wallet (Dana, GoPay, OVO, ShopeePay).</p>
+    <p class="text-xs text-gray-500 mb-8">Scan menggunakan M-Banking atau E-Wallet (Dana, GoPay, OVO, ShopeePay).</p>
+
+    <!-- Arahan Setelah Donasi -->
+    <div class="bg-slate-800/90 border border-purple-500/40 p-6 rounded-2xl text-left w-full shadow-xl">
+        <h3 class="text-lg font-bold text-purple-400 mb-2 flex items-center">
+            <i class="fa-brands fa-discord text-2xl mr-3"></i> Sudah Berdonasi?
+        </h3>
+        <p class="text-sm text-gray-300 mb-4">
+            Silakan masuk ke server Discord BORDIS dan berikan bukti transfer kepada Owner/Creator. Nama Anda akan dimasukkan ke dalam <strong>List Donatur AI</strong> sehingga AI BORDIS akan mengenali dan menyapa Anda secara khusus!
+        </p>
+        <a href="https://discord.gg/MMSJEp4zP" target="_blank" class="inline-flex items-center justify-center w-full py-3 px-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-colors">
+            <i class="fa-brands fa-discord mr-2"></i> Join Discord BORDIS & Klaim Nama Donatur
+        </a>
+    </div>
 </body>
 </html>
