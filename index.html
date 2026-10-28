@@ -21,19 +21,19 @@
 </head>
 <body class="antialiased">
 
-    <!-- Navbar & Titik Tiga (Hamburger) -->
+    <!-- Navbar & Menu Navigasi -->
     <nav class="fixed w-full z-50 glass-card border-b-0 py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="flex items-center space-x-3">
             <i class="fa-solid fa-robot text-3xl text-neonBlue"></i>
             <span class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-neonPurple">BORDIS</span>
         </div>
         
-        <!-- Toggle Menu -->
+        <!-- Toggle Button Menu (Titik Tiga / Hamburger) -->
         <button id="menuBtn" class="text-gray-300 hover:text-white focus:outline-none z-50">
-            <i class="fa-solid fa-bars text-2xl"></i>
+            <i class="fa-solid fa-ellipsis-vertical text-2xl"></i>
         </button>
 
-        <!-- Sidebar / Dropdown Menu -->
+        <!-- Sidebar Menu -->
         <div id="mobileMenu" class="fixed top-0 right-[-100%] w-64 h-screen bg-gray-900 border-l border-gray-800 shadow-2xl p-6 pt-20 flex flex-col space-y-6 z-40">
             <a href="index.html" class="text-lg font-semibold hover:text-neonBlue"><i class="fa-solid fa-house w-6 text-center mr-2"></i> <span class="t-home">Dashboard</span></a>
             <a href="support.html" class="text-lg font-semibold hover:text-neonBlue"><i class="fa-solid fa-heart w-6 text-center mr-2"></i> <span class="t-support">Support/Donasi</span></a>
@@ -42,7 +42,6 @@
             
             <hr class="border-gray-700">
             
-            <!-- Language Switcher -->
             <div class="flex items-center justify-between">
                 <span class="text-sm text-gray-400 t-lang">Bahasa:</span>
                 <select id="langSelect" class="bg-gray-800 text-sm p-2 rounded outline-none border border-gray-700">
@@ -54,18 +53,26 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-32 pb-20 px-6 text-center">
+    <header class="pt-32 pb-16 px-6 text-center flex flex-col items-center">
         <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight t-hero-title">
             Tingkatkan Kualitas <br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-neonPurple">Roleplay Server Anda</span>
         </h1>
-        <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto t-hero-desc">
+        <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto t-hero-desc">
             BORDIS adalah bot multifungsi dengan sistem SSRP Studio Otomatis, AI Chatbot, dan manajemen server dinamis.
         </p>
+
+        <!-- Tombol Invite Utama (Glowing Button) -->
+        <a href="https://discord.com/oauth2/authorize?client_id=1553655967051419730&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" class="relative inline-flex group mb-12">
+            <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-neonBlue via-purple-500 to-neonPurple rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1"></div>
+            <button class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-gray-900 rounded-xl">
+                <i class="fa-brands fa-discord mr-3 text-2xl"></i> Invite BORDIS
+            </button>
+        </a>
     </header>
 
-    <!-- Fitur Section -->
-    <section class="py-16 px-6 max-w-7xl mx-auto">
+    <!-- Fitur Unggulan -->
+    <section class="py-12 px-6 max-w-7xl mx-auto">
         <h2 class="text-3xl font-bold text-center mb-12 t-feat-title">Fitur Unggulan (Klik untuk Detail)</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div onclick="window.location.href='fitur-ssrp.html'" class="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
@@ -86,19 +93,104 @@
         </div>
     </section>
 
+    <!-- Terminal Daftar Perintah (Commands Lengkap) -->
+    <section class="py-12 px-6 max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center"><i class="fa-solid fa-terminal mr-3"></i>Daftar Perintah (Commands)</h2>
+        
+        <div class="bg-[#0d1117] rounded-xl border border-gray-800 overflow-hidden shadow-2xl">
+            <div class="bg-gray-800 px-4 py-2 flex items-center space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="text-xs text-gray-400 ml-4 font-mono">bordis-terminal ~ bash</span>
+            </div>
+            <div class="p-6 overflow-x-auto">
+                <table class="w-full text-left font-mono text-sm">
+                    <thead>
+                        <tr class="text-gray-400 border-b border-gray-700">
+                            <th class="pb-3 px-4 w-1/4">Command</th>
+                            <th class="pb-3 px-4 w-1/2">Deskripsi</th>
+                            <th class="pb-3 px-4 w-1/4">Akses</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/ssrp</td>
+                            <td class="py-3 px-4">Buka panel SSRP Studio interaktif (Thread)</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/chatlogs</td>
+                            <td class="py-3 px-4">Pembersih otomatis file chatlog .txt dari game</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/helpssrp</td>
+                            <td class="py-3 px-4">Buku panduan lengkap & unduh script Lua</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/suggestion</td>
+                            <td class="py-3 px-4">Kirim saran atau masukan ke DM Developer</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/cmds</td>
+                            <td class="py-3 px-4">Lihat daftar perintah bot</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/support</td>
+                            <td class="py-3 px-4">Dukung pengembangan bot & info donasi</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-gray-700 rounded text-xs">Public</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/panel</td>
+                            <td class="py-3 px-4">Dashboard Auto-Accept, Role Builder, & List</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">Admin / Staff</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/setupai</td>
+                            <td class="py-3 px-4">Atur channel khusus untuk interaksi AI BORDIS</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">Admin</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-800/50 hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">/role & /unrole</td>
+                            <td class="py-3 px-4">Tambah / hapus banyak role ke member sekaligus</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">Staff</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/30">
+                            <td class="py-3 px-4 text-neonBlue">!teks &lt;pesan&gt;</td>
+                            <td class="py-3 px-4">Kirim pengumuman embed berlatar hitam rapi</td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 bg-red-900/50 text-red-300 rounded text-xs">Staff</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer dengan Dokumen Hukum (Wajib untuk Verifikasi Discord) -->
+    <footer class="border-t border-gray-800 py-8 mt-12 text-center">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="tos.html" class="text-sm text-neonBlue hover:underline font-semibold">Terms of Service</a>
+            <span class="text-gray-600">|</span>
+            <a href="privacy.html" class="text-sm text-neonBlue hover:underline font-semibold">Privacy Policy</a>
+        </div>
+        <p class="text-xs text-gray-500">© 2026 BORDIS Bot. All rights reserved.</p>
+    </footer>
+
     <!-- Script Menu & Bahasa -->
     <script>
-        // Toggle Sidebar Menu
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         let menuOpen = false;
         menuBtn.addEventListener('click', () => {
             menuOpen = !menuOpen;
             mobileMenu.style.right = menuOpen ? '0' : '-100%';
-            menuBtn.innerHTML = menuOpen ? '<i class="fa-solid fa-xmark text-2xl"></i>' : '<i class="fa-solid fa-bars text-2xl"></i>';
+            menuBtn.innerHTML = menuOpen ? '<i class="fa-solid fa-xmark text-2xl"></i>' : '<i class="fa-solid fa-ellipsis-vertical text-2xl"></i>';
         });
 
-        // Simple Language System
         const translations = {
             id: {
                 "t-home": "Dashboard", "t-support": "Support/Donasi", "t-join": "Join Discord", "t-invite": "Invite Bot",
